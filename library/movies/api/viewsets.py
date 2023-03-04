@@ -6,7 +6,9 @@ from rest_framework import status
 from movies.api import serializers
 from movies import models
 from movies.models import Rating
-
+from django.db.models import OuterRef, Subquery
+from django.db.models.functions import Coalesce
+from django.db.models import Avg
 
 #class MovieViewSet(viewsets.ModelViewSet):
     #serializer_class = serializers.MovieSerializer
@@ -38,3 +40,11 @@ class TotalRating(viewsets.ModelViewSet):
         total = totalNotas/qtd if qtd > 0 else 0
 
         return Response({'Total': total})
+
+class NoRateList(viewsets.ModelViewSet):
+    
+    queryset = models.Rating.objects.annotate(total=Avg('nota')).filter(total=0)
+    serializer_class = serializers.RatingSerializer
+
+
+        

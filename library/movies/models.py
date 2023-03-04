@@ -19,6 +19,6 @@ class Rating(models.Model):
 
     id = models.AutoField(primary_key=True)
     idMovie = models.ForeignKey(Movies, on_delete=models.CASCADE)
-    nota = models.DecimalField(max_digits=3, decimal_places=1, default=0.0)
+    nota = models.DecimalField(max_digits=3, decimal_places=1, default= 0)
 
 

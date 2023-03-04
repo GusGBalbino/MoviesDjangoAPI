@@ -86,6 +86,14 @@ Essa rota é responsável por fazer a média de notas a partir do id de um filme
 
 - Se não houver registros retorna 0
 
+## 4 - /norate
+
+Essa rota é responsável por retornar os filmes não avaliados, a partir de sua nota.
+
+- A rota retorna as informações dos filmes em lista, que foram avaliados sem nota ou com nota = 0.0
+
+
+
 ## ✒️ Autor
 
 * **Gustavo Gomes** - *API* - [GusGBalbino](https://github.com/GusGBalbino)
