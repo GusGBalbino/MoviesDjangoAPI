@@ -1,0 +1,5 @@
+SECRET_KEY= YourSecretKey
+DEBUG= YourDebug
+ALLOWED_HOSTS= YourAllowedHosts
+DATABASE_ENGINE= YourDataBaseEngine
+DATABASE_NAME= YourDataBaseName
